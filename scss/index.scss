@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+@import "reset";
+
+html {
+  font: {
+    size: 16px;
+    family: "Arial", "Helvetica", "微軟正黑體", "sans-serif";
+  }
+  background: {
+    image: url('../images/bg.gif');
+  }
+}
+
+a {
+  color: inherit;
+  text: {
+    decoration: none;
+  }
+}
+
+.header {
+  width: 100%;
+  &__title {
+    margin: {
+      top: 16px;
+      bottom: 50px;
+    }
+    font: {
+      size: 4rem;
+      weight: 600;
+    }
+    text: {
+      align: center;
+      shadow: -0.01em 0.02em #000;
+    }
+    color: #444;
+  }
+}
+
+.mx {
+  &-auto {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+}
+
+.js {
+  &-item {
+    &-hovered {
+      .nav {
+        &__subLs {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  max-width: 800px;
+}
+
+.nav {
+  &__ls{
+    display: flex;
+    justify-content: flex-start;
+    border: {
+      top: 0.2em solid #990000;
+      radius: 15px 0 15px 0;
+    }
+    background: {
+      image: url('../images/nav_bg.gif');
+      repeat: repeat-x;
+    }
+    
+    
+  }
+  &__item {
+    position: relative;
+    color: #333;
+    &+& {
+      border: {
+        left: 1px solid #ABABAB;
+      }
+    }
+    font: {
+      size: 15px;
+    }
+  }
+  &__subLs {
+    position: absolute;
+    top: 100%;
+    left: 1px;
+    width: 180px;
+    background-color: #eee;
+    box-shadow: 4px 4px #000;
+    display: none;
+  }
+  &__subItem {
+    box-sizing: border-box;
+    width: 97.8%;
+    color: #333;
+    &:hover {
+      background: {
+        color: #990000;
+      }
+      .nav {
+        &__subLink {
+           &::before {
+            content:'';
+            padding: {
+              left: 1px;
+              right: 6px;
+            }
+            background: {
+              image:  url(../images/sub-arrow.gif);
+              repeat: no-repeat;
+            }
+            width: 8px;
+            height: 5px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+  &__link {
+    padding: 10px 16px;
+    display: inline-block;
+  }
+  &__subLink {
+    padding: {
+      bottom: 6px;
+      left: 8px;
+      top: 6px;
+    }
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+}
