@@ -50,7 +50,7 @@ a {
 .js {
   &-item {
     &-hovered {
-      .nav {
+      >.nav {
         &__subLs {
           display: block;
         }

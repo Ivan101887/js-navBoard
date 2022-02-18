@@ -78,7 +78,7 @@ a {
   margin-right: auto;
 }
 
-.js-item-hovered .nav__subLs {
+.js-item-hovered > .nav__subLs {
   display: block;
 }
 

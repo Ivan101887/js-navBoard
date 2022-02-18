@@ -1,27 +1,18 @@
-const elemNav = document.querySelector('#Nav');
 setEvent();
 function setEvent() {
-  elemNav.addEventListener('mouseover', atEnter, false);
-  elemNav.addEventListener('mouseout', cancelEnter);
+  const elemNav = document.querySelector('#Nav');
+  elemNav.addEventListener('mouseenter', toggleEnter, true);
+  elemNav.addEventListener('mouseleave', toggleEnter, true);
+}
+function toggleEnter(e) {
+  if (e.type === 'mouseenter') {
+    e.target.classList.add('js-item-hovered');
+  }
+  else if (e.type === 'mouseleave') {
+    e.target.classList.remove('js-item-hovered');
+  }
 }
 
-function atEnter(e) {
-  const self = e.target;
-  const next = self.nextElementSibling;
-  console.log(e);
-  e.preventDefault();
-  next.style.display = 'block';
-
-  // console.log(next);
-  // e.stopPropagation();
-  // if (next === null || next.nodeName !== 'UL') return;
-  // console.log(666)
-
-}
-
-function cancelEnter(e) {
-  
-}
 
 
 
